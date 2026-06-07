@@ -59,6 +59,5 @@ of the relevant standard for the task at hand. See `00A-AI-OPERATING-PROTOCOL.md
 ## License
 
 - **Documentation** (all `.md` standards and templates): [CC BY 4.0](LICENSE).
-- **Code** (the `scripts/` directory): [MIT](LICENSE-MIT).
 
 (c) 2026 <JOÃO MARTINS>. Licensed under CC BY 4.0 (docs) and MIT (scripts).
