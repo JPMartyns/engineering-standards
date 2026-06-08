@@ -51,13 +51,13 @@ If you only have time for three documents, start here:
 
 | Template                        | Description                              | Status |
 |---------------------------------|------------------------------------------|--------|
-| `adr-template.md`               | Architecture Decision Record template    | ✅     |
-| `pr-template.md`                | Pull Request description template        | ✅     |
-| `incident-report.md`            | Incident response report template        | ✅     |
-| `data-inventory.md`             | Data inventory for privacy compliance    | ✅     |
-| `briefing-template.md`          | Client intake questionnaire (reference — original is .docx) | ✅     |
-| `proposal-template.md`          | Commercial proposal template (3 packages, client-facing) | ✅     |
-| `project-master-template.md`    | Project definition document template (all phases)  | ✅     |
+| `templates/adr-template.md`               | Architecture Decision Record template    | ✅     |
+| `templates/pr-template.md`                | Pull Request description template        | ✅     |
+| `templates/incident-report.md`            | Incident response report template        | ✅     |
+| `templates/data-inventory.md`             | Data inventory for privacy compliance    | ✅     |
+| `templates/briefing-template.md`          | Client intake questionnaire (reference — original is .docx) | ✅     |
+| `templates/proposal-template.md`          | Commercial proposal template (3 packages, client-facing) | ✅     |
+| `templates/project-master-template.md`    | Project definition document template (all phases)  | ✅     |
 
 ---
 
@@ -123,9 +123,9 @@ If you only have time for three documents, start here:
 | Open a pull request                                       | `templates/pr-template.md`     |
 | Report a production incident                              | `templates/incident-report.md` |
 | Map personal data for RGPD compliance                     | `templates/data-inventory.md`  |
-| Collect requirements from a client                        | `briefing-template.md`         |
-| Create a commercial proposal for a client                 | `proposal-template.md`         |
-| Define a new project (scope, requirements, tech direction)| `project-master-template.md`   |
+| Collect requirements from a client                        | `templates/briefing-template.md`         |
+| Create a commercial proposal for a client                 | `templates/proposal-template.md`         |
+| Define a new project (scope, requirements, tech direction)| `templates/project-master-template.md`   |
 
 ---
 

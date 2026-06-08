@@ -23,11 +23,11 @@ WORKFLOW:
   1. Send the .docx to the client
   2. Client fills it and returns it
   3. Use the responses + this reference to create the Project Master
-     (→ project-master-template.md)
+     (→ templates/project-master-template.md)
   4. The Project Master becomes the source of truth for the project
 
 REFERENCES:
-  → project-master-template.md — The document created FROM this briefing
+  → templates/project-master-template.md — The document created FROM this briefing
   → 11-project-management.md — Project lifecycle and management standards
   → 01-core-principles.md — Engineering principles that guide technical decisions
 

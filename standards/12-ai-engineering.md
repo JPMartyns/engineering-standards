@@ -428,7 +428,7 @@ const res = await generateObject({
   mapped in advance. An agent is justified only when the path is genuinely unpredictable
   *and* the task value justifies the added cost/latency. → See [02-technology-radar.md].
 - Each rung up **MUST** record the reason the lower rung failed. Introducing an agent
-  **SHOULD** be captured in an ADR. → See [01-core-principles.md], §9; `adr-template.md`.
+  **SHOULD** be captured in an ADR. → See [01-core-principles.md], §9; `templates/adr-template.md`.
 - Climbing a rung **MUST NOT** be driven by hype or "it might need it later" — only by a
   current, demonstrated need. → See §1.6; [00A-AI-OPERATING-PROTOCOL.md] (no over-engineering).
 
@@ -858,7 +858,7 @@ logger.info({
   context (which pattern fired, and why). → See [08-observability.md].
 - A single-provider dependency on a critical path **SHOULD** be recorded as a risk —
   LLM provider uptime is materially lower than typical cloud infrastructure.
-  → See `adr-template.md`.
+  → See `templates/adr-template.md`.
 
 **Why:**
 
@@ -1462,7 +1462,7 @@ that decides whether you need any of this at all — and most systems do not.
   and failure surface — never add two at once "to be safe".
 - Adopting an expensive or sticky pattern (especially Agentic RAG or Graph RAG)
   **SHOULD** be recorded in an ADR capturing the measured failure, the expected gain, and
-  the accepted cost. → See [01-core-principles.md, § 9]; `adr-template.md`.
+  the accepted cost. → See [01-core-principles.md, § 9]; `templates/adr-template.md`.
 - This chapter decides *whether and when* to use a pattern; it **MUST NOT** decide *which*
   tool implements it. Graph store, web-retrieval API, and reranker choices defer to
   → See [02-technology-radar.md, § 3.28] and the decision guide § 6.13.
@@ -1703,7 +1703,7 @@ switch (strategy) {                        // deterministic dispatch in code (§
   adopt it only when the retrieval path is genuinely unpredictable — the next query depends
   on what the last one returned — *and* the task value justifies the cost. It **MUST NOT**
   be a default, nor be chosen because it "feels" more capable. → See §4.1; §1.6;
-  `adr-template.md`.
+  `templates/adr-template.md`.
 - In Agentic RAG, retrieval **MUST** be exposed to the model as one or more well-typed
   *tools* (e.g. `searchCorpus`, `searchWeb`, `lookupEntity`) whose inputs and outputs are
   validated at the boundary (§2.2). The model decides *when and what* to retrieve; code
@@ -1794,7 +1794,7 @@ return result; // every tool result was validated and fenced; the loop was bound
   and relationship extraction, community detection, summarisation) is roughly an order of
   magnitude or more costlier to index than vector RAG, and that cost recurs on every
   re-index. The ADR **MUST** state corpus size and re-index cadence. → See §4.1;
-  `adr-template.md`.
+  `templates/adr-template.md`.
 - Graph RAG **SHOULD** be deployed as a *hybrid* — a graph layer alongside the existing
   hybrid vector/lexical retriever — not as a replacement. Route relational/global queries to
   the graph and everything else to the §3.2 pipeline; that routing is an Adaptive-RAG
@@ -2612,7 +2612,7 @@ real-world harm.
 - An agent **MUST NOT** be the default. It is the top rung of the ladder (§1.6): adopt it
   only when the path is genuinely unpredictable **and** the task value justifies the cost,
   and **MUST** record the reason the lower rung failed in an ADR. → See §1.6;
-  `adr-template.md`.
+  `templates/adr-template.md`.
 - Every agent **MUST** run inside a **harness**: the deterministic code that owns the loop,
   validates and executes tool calls, manages context and memory, enforces budgets and stop
   conditions, handles errors, and gates side effects. The model proposes; the harness
@@ -3027,7 +3027,7 @@ const result = await generateText({
 - Memory holding personal data **MUST** follow the data-protection and retention rules —
   scoped, redactable, deletable, with a defined retention period. Persisting "everything
   forever" is an RGPD liability, not a feature. → See [07-security-standards.md, §14];
-  [08-observability.md] (PII redaction); `data-inventory.md`.
+  [08-observability.md] (PII redaction); `templates/data-inventory.md`.
 
 **Why:**
 
@@ -3086,7 +3086,7 @@ const prompt = buildPrompt({ task, context, recalled: fence(longTerm) }); // rec
 
 > `memoryStore`, `compact`, `fence`, and `ctx.user` are pattern placeholders. Storage schema,
 > indexing, and RLS for the memory store → See [04-database-standards.md]; retention and
-> deletion of personal data → See [07-security-standards.md, §14]; `data-inventory.md`. Memory
+> deletion of personal data → See [07-security-standards.md, §14]; `templates/data-inventory.md`. Memory
 > framework support (the *what*) → See [02-technology-radar.md, § 3.26].
 > Anti-patterns are collected in §6.9.
 
@@ -3100,7 +3100,7 @@ const prompt = buildPrompt({ task, context, recalled: fence(longTerm) }); // rec
   *above* it and **MUST** clear its own bar: adopt it only when a single agent measurably
   fails because (a) context management has broken down, or (b) the work needs clear ownership
   boundaries across distinct domains — and **MUST** record the decision in an ADR. → See §1.6;
-  `adr-template.md`.
+  `templates/adr-template.md`.
 - Multi-agent **MUST NOT** be chosen for the appearance of a "team." Splitting one agent into
   sub-agents that are the same model differentiated only by system prompts, coordinating
   through shared files or queues, **MUST** be recognized for what it is: a slower, costlier
@@ -3821,7 +3821,7 @@ GOOD: vLLM behind a reverse proxy with auth + TLS ([07, §8]), host hardened per
 - When fine-tuning is genuinely justified, **LoRA / QLoRA is the default** (parameter-
   efficient, single-GPU, small adapter artifact). Full fine-tuning **MUST** be reserved for
   rare cases and recorded in an ADR. The choice of tool/runtime is the radar's.
-  → See [02-technology-radar.md, §3.25]; `adr-template.md`.
+  → See [02-technology-radar.md, §3.25]; `templates/adr-template.md`.
 - Fine-tuning and RAG are **complementary, not competing**: the winning pattern is *fine-tune
   the interface (tone/format), retrieve the content*. **MUST NOT** fine-tune to embed
   knowledge that RAG should serve. → See Chapter 3.

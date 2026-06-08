@@ -68,7 +68,7 @@ class Reference:
     filename: str               # extracted filename, e.g. "04-db.md"
     status: str = "unresolved"  # "ok" | "broken" | "ambiguous"
     resolved_path: Optional[Path] = None
-    candidates: list[Path] = field(default_factory=list)
+    candidates: list[Path] = field(default_factory=lambda: [])
 
 
 # ---------------------------------------------------------------------------

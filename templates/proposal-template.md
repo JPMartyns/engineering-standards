@@ -39,7 +39,7 @@ CRITICAL PRINCIPLES:
 AI AGENT INSTRUCTIONS:
   When helping fill this template for a real client:
   1. Read the client's briefing first (briefing answers)
-  2. Read the project-master-template.md to understand what the
+  2. Read the templates/project-master-template.md to understand what the
      project will eventually need
   3. Map each briefing answer to the appropriate proposal section
   4. For the Essential package: include EXACTLY what the client asked for
@@ -54,8 +54,8 @@ AI AGENT INSTRUCTIONS:
   9. The output language for the final proposal MUST be Portuguese (PT)
 
 REFERENCES:
-  → briefing-template.md — Source of client requirements
-  → project-master-template.md — Internal document created after proposal acceptance
+  → templates/briefing-template.md — Source of client requirements
+  → templates/project-master-template.md — Internal document created after proposal acceptance
   → 02-technology-radar.md — Technology choices that inform what's offered
   → 11-project-management.md — Delivery and project management
 -->
